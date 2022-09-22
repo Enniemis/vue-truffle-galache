@@ -19,9 +19,8 @@
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
-import upWeb3 from './utils/myWeb3'
-// import Web3 from 'web3';
-import event from './utils/contractsFun'
+import {init,sign,sendTransfer} from './utils/myWeb3.js'
+import event from './utils/contractsFun.js'
 export default {
   name: 'App',
   components: {
@@ -38,7 +37,7 @@ export default {
   },
   mounted() {
     // console.log(Web3.version);
-    upWeb3.init(addr=>{
+    init(addr=>{
       console.log(addr);
       this.address = addr;
     });
@@ -47,14 +46,14 @@ export default {
     // 签名
     sign(){
       let timestamp=new Date().getTime();
-      upWeb3.sign(timestamp,this.address,signString=>{
+      sign(timestamp,this.address,signString=>{
         this.signString = signString
         console.log(signString);
       })
     },
     // 转账
     transfer(){
-      upWeb3.sendTransfer(this.address,this.inputs,err =>{
+      sendTransfer(this.address,this.inputs,err =>{
        console.log(err);
       })
     },
@@ -62,7 +61,7 @@ export default {
     async findContract(){
       // const callContract = async()=>{
         const res = await event.babyDoge.name();
-        console.log(res);
+        alert(res)
       // }  
     },
     // 代币转账
