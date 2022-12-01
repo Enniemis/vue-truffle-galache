@@ -46,3 +46,5 @@ Vue.prototype.Wbe3 = Web3
     3、执行truffle migrate 部署合约
 }
 
+### 制作不易，方便点个start吧
+

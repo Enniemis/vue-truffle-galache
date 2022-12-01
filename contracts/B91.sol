@@ -13,7 +13,7 @@ contract B91 is ERC20{
         owner = msg.sender;
         _mint(msg.sender,initialSupply);
     }
-    // 接收意外的eth转账
+    // 接收退回的eth转账
     fallback() external payable{}
     // 接收意外的eth转账
     receive() external payable{}
