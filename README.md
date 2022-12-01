@@ -33,6 +33,7 @@ Vue.prototype.Wbe3 = Web3
 3、npm i ether.js --save 下载ether.js库
 4、npm i @truffle/contract 下载truffle 环境
 5、truffle init 生成truffle环境 还要 (npm i  @openzeppelin/contracts -save )
+   truffle更新迭代部署上链需要下载 npm install truffle truffle-hdwallet-provider
 6、在contracts 里面编写.sol文件
 7、在migrations 里面编写1_initial_migration.js
 8、执行truffle develop
@@ -40,7 +41,7 @@ Vue.prototype.Wbe3 = Web3
 10、执行truffle migrate 部署合约
 11、执行galache 启动本地模拟区块链环境
 12、如果要truffle+galache开发，{
-    1、执行galache 启动本地模拟区块链环境
+    1、启动galache 启动本地模拟区块链环境
     2、执行truffle compile 编译合约
     3、执行truffle migrate 部署合约
 }
